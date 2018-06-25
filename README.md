@@ -1,5 +1,5 @@
 # SMW
-
+Retrieve remotely intents and slots using the Snips NLU engine
 # Installation
 
 ## Prerequisites
