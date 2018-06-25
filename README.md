@@ -1,8 +1,11 @@
 # SMW
-=========
 
-Installation
-------------
+# Installation
+
+## Prerequisites
+
 First install Snips NLU
+'''
+$ pip install snips-nlu
+'''
 
-pip install snips-nlu
