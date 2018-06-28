@@ -7,6 +7,8 @@ import urllib
 import io
 import json
 from snips_nlu import load_resources, SnipsNLUEngine
+from snips_nlu.default_configs import CONFIG_EN
+import codecs
 
 NLU_engine = None
 
@@ -39,18 +41,18 @@ class Handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
 if __name__ == '__main__':
     global NLU_engine
     
-    if len(sys.args) < 1:
+    if len(sys.argv) < 1:
         print "Syntax: %s <trained_assistant_path> [<port>]" % sys.argv[0]
         sys.exit(1)
         
     DATASET_PATH = sys.argv[1]
-	
-    PORT = sys.argv[2] if len(sys.argv) == 2 else 80
-    if not isdigit(PORT) or PORT > 65535:
+    PORT = sys.argv[2] if len(sys.argv) == 3 else 80
+
+    if PORT > 65535:
         print "Error. Provide a valid port number"
         sys.exit(1)
         
-    with io.open(DATASET_PATH) as ds:
+    with codecs.open(DATASET_PATH, 'r', 'utf-8') as ds:
         dataset_dict = json.load(ds)
          
     load_resources(u"en")
