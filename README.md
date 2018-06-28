@@ -18,7 +18,7 @@ $ pip install setuptools_rust
 
 After install Snips NLU, using the version found in the _trained_assistant.json_ file downloaded from the Snips Console.
 The version to look up is in the entry "training_package_version": [NLU_VERSION]
-Note: If you trained and installed the NLU at the same time the version usually coincide, so it is not necessary to specify it
+If you trained and installed the NLU at the same time the version usually coincide, so it is not necessary to specify it
 
 ```
 $ pip install snips-nlu==[NLU_VERSION]
